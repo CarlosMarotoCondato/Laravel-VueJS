@@ -6,21 +6,17 @@ use Illuminate\Database\Seeder;
 
 use Illuminate\Database\Eloquent\Model; // <- added this
 
+use App\Models\User;
 
-class DatabaseSeeder extends Seeder
+class UserTableSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-       
-        $this->call(UserTableSeeder::class);
- 
-        $this->command->info('User table seeded!');
+        User::create(['name' => 'foo@bar.com','password' => 'foo@bar.com','email' => 'foo@bar.com']);
     }
 }
-
-
